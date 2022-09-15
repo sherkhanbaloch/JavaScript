@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock in JavaScript</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: black;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+        
+        h1{
+            text-align: center;
+        }
+        
+        .main {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container p {
+            font-size: 3rem;
+            display: inline;
+            padding: 100px;
+        }
+
+        #hours,
+        #seconds,
+        #date {
+            padding: 8px;
+            border: 1px solid white;
+            line-height: 100px;
+        }
+
+        #seconds {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Digital Clock By: Afaque Buledi</h1>
+    <div class="main">
+        <div class="container">
+            <p>Current Time: </p>
+            <p id="hours">Hours : Minutes </p>
+            <p id="seconds">Seconds </p>
+            <p>Date Today: </p>
+            <p id="date">Date</p>
+        </div>
+    </div>
+
+
+    <script>
+
+        let myDate;
+        let hours;
+        let Minutes;
+        let seconds;
+        let date;
+        let day;
+
+        setInterval(() => {
+            myDate = new Date();
+
+            hours = myDate.getHours();
+
+            Minutes = myDate.getMinutes();
+
+            seconds = myDate.getSeconds();
+
+            date = myDate.toDateString()
+
+            document.getElementById('hours').innerHTML = hours + ":" + Minutes;
+
+            document.getElementById('seconds').innerHTML = seconds + "<br>";
+
+            document.getElementById('date').innerHTML = date;
+        }, 1000);
+
+
+    </script>
+
+
+
+</body>
+
+</html>
